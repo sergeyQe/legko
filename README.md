@@ -2,6 +2,26 @@
 
 Консольный скрипт на Python для замера скорости скачивания. Делает несколько запросов к одному адресу **строго по очереди**, на каждый дожидается полного ответа, затем печатает среднее время запроса, общий объём и скорость.
 
+## Быстрый старт
+
+Команды можно копировать как есть, адрес для замера уже подставлен.
+
+Windows (PowerShell):
+
+```powershell
+git clone https://github.com/sergeyQe/legko.git; cd legko; python -m venv .venv; .venv\Scripts\activate; pip install -r requirements.txt; python main.py https://proof.ovh.net/files/10Mb.dat
+```
+
+Linux / macOS:
+
+```bash
+git clone https://github.com/sergeyQe/legko.git && cd legko && python3 -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt && python main.py https://proof.ovh.net/files/10Mb.dat
+```
+
+Тесты (без интернета): `python -m pytest`.
+
+Подробности, аргументы и единицы — ниже.
+
 ## Требования
 
 - Python 3.10 или новее
