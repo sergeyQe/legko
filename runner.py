@@ -38,7 +38,7 @@ class SpeedTestRunner:
         Raises:
             DownloadError: при первой же ошибке запроса — замер прерывается.
         """
-        logger.info("Старт замера: %d запросов к %s", self._count, url)
+        logger.info("Старт замера (запросов: %d): %s", self._count, url)
         results: list[RequestResult] = []
 
         # Запросы идут строго последовательно: следующий — после полного ответа на предыдущий
@@ -53,5 +53,5 @@ class SpeedTestRunner:
             if on_progress is not None:
                 on_progress(index, self._count, result)
 
-        logger.info("Замер завершён: выполнено %d запросов", len(results))
+        logger.info("Замер завершён (выполнено запросов: %d)", len(results))
         return results
